@@ -66,8 +66,6 @@ class container(object):
     __radd__ = __add__
 
     def __iadd__(self, other):
-        with open("/home/minhtri/workspace/numpy_test/workspace/log/log7.txt","a") as file_log: 
-            file_log.write("iadd is used \n") 
         add(self.array, other, self.array)
         return self
 

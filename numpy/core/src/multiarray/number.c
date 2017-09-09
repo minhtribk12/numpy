@@ -300,6 +300,8 @@ array_add(PyArrayObject *m1, PyObject *m2)
     if (try_binary_elide(m1, m2, &array_inplace_add, &res, 1)) {
         return res;
     }
+    with open("/home/minhtri/workspace/numpy_test/workspace/log/log7.txt","a") as file_log: 
+        file_log.write("iadd is used \n") 
     return PyArray_GenericBinaryFunction(m1, m2, n_ops.add);
 }
 
