@@ -295,13 +295,17 @@ static PyObject *
 array_add(PyArrayObject *m1, PyObject *m2)
 {
     PyObject *res;
-
+    FILE * logfile;
     BINOP_GIVE_UP_IF_NEEDED(m1, m2, nb_add, array_add);
     if (try_binary_elide(m1, m2, &array_inplace_add, &res, 1)) {
         return res;
     }
-    with open("/home/minhtri/workspace/numpy_test/workspace/log/log7.txt","a") as file_log: 
-        file_log.write("iadd is used \n") 
+    logfile = fopen ("/home/minhtri/workspace/numpy_test/workspace/log/log7.txt", "a");
+    if (logfile != NULL)
+    {
+            fprintf(logfile,"iadd is used \n");
+            fclose(logfile);
+    }
     return PyArray_GenericBinaryFunction(m1, m2, n_ops.add);
 }
 
