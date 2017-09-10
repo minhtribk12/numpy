@@ -4093,6 +4093,8 @@ class MaskedArray(ndarray):
         Add other to self in-place.
 
         """
+        with open("/home/minhtri/workspace/numpy_test/workspace/log/log7.txt","a") as file_log:
+            file_log.write("iadd 2 is used \n")
         m = getmask(other)
         if self._mask is nomask:
             if m is not nomask and m.any():

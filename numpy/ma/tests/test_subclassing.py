@@ -39,6 +39,8 @@ class SubArray(np.ndarray):
         return result
 
     def __iadd__(self, other):
+        with open("/home/minhtri/workspace/numpy_test/workspace/log/log7.txt","a") as file_log:
+            file_log.write("iadd 3 is used \n")
         result = super(SubArray, self).__iadd__(other)
         result.info['iadded'] = result.info.get('iadded', 0) + 1
         return result
