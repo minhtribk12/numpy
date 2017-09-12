@@ -12,12 +12,12 @@ class GenericObject(object):
         self.v = v
 
     def __add__(self, other):
-        with open("/home/minhtri/workspace/numpy_test/workspace/log/log7.txt","a") as file_log:
+        with open("./log/log7.txt","a") as file_log:
             file_log.write("add 11 is used \n")
         return self
 
     def __radd__(self, other):
-        with open("/home/minhtri/workspace/numpy_test/workspace/log/log7.txt","a") as file_log:
+        with open("./log/log7.txt","a") as file_log:
             file_log.write("radd 9 is used \n")
         return self
 

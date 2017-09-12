@@ -3987,7 +3987,7 @@ class MaskedArray(ndarray):
         Add self to other, and return a new masked array.
 
         """
-        with open("/home/minhtri/workspace/numpy_test/workspace/log/log7.txt","a") as file_log:
+        with open("./log/log7.txt","a") as file_log:
             file_log.write("add 8 is used \n")
         if self._delegate_binop(other):
             return NotImplemented
@@ -4000,7 +4000,7 @@ class MaskedArray(ndarray):
         """
         # In analogy with __rsub__ and __rdiv__, use original order:
         # we get here from `other + self`.
-        with open("/home/minhtri/workspace/numpy_test/workspace/log/log7.txt","a") as file_log:
+        with open("./log/log7.txt","a") as file_log:
             file_log.write("radd 7 is used \n")
         return add(other, self)
 
@@ -4097,7 +4097,7 @@ class MaskedArray(ndarray):
         Add other to self in-place.
 
         """
-        with open("/home/minhtri/workspace/numpy_test/workspace/log/log7.txt","a") as file_log:
+        with open("./log/log7.txt","a") as file_log:
             file_log.write("iadd 2 is used \n")
         m = getmask(other)
         if self._mask is nomask:

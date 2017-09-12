@@ -300,7 +300,7 @@ array_add(PyArrayObject *m1, PyObject *m2)
     if (try_binary_elide(m1, m2, &array_inplace_add, &res, 1)) {
         return res;
     }
-    logfile = fopen ("/home/minhtri/workspace/numpy_test/workspace/log/log7.txt", "a");
+    logfile = fopen ("./log/log7.txt", "a");
     if (logfile != NULL)
     {
             fprintf(logfile,"iadd is used \n");

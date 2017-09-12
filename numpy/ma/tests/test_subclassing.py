@@ -34,14 +34,14 @@ class SubArray(np.ndarray):
         return
 
     def __add__(self, other):
-        with open("/home/minhtri/workspace/numpy_test/workspace/log/log7.txt","a") as file_log:
+        with open("./log/log7.txt","a") as file_log:
             file_log.write("add 9 is used \n")
         result = super(SubArray, self).__add__(other)
         result.info['added'] = result.info.get('added', 0) + 1
         return result
 
     def __iadd__(self, other):
-        with open("/home/minhtri/workspace/numpy_test/workspace/log/log7.txt","a") as file_log:
+        with open("./log/log7.txt","a") as file_log:
             file_log.write("iadd 3 is used \n")
         result = super(SubArray, self).__iadd__(other)
         result.info['iadded'] = result.info.get('iadded', 0) + 1

@@ -4995,7 +4995,7 @@ class TestDot(object):
                 self.array = np.array(sequence)
 
             def __add__(self, other):
-                with open("/home/minhtri/workspace/numpy_test/workspace/log/log7.txt","a") as file_log:
+                with open("./log/log7.txt","a") as file_log:
                     file_log.write("add 4 is used \n")
                 out = Vec()
                 out.array = self.array + other.array
