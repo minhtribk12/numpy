@@ -19,6 +19,8 @@ def _disables_array_ufunc(obj):
 
 def _binary_method(ufunc, name):
     """Implement a forward binary method with a ufunc, e.g., __add__."""
+    with open("/home/minhtri/workspace/numpy_test/workspace/log/log7.txt","a") as file_log:
+        file_log.write("add 4 is used \n")
     def func(self, other):
         if _disables_array_ufunc(other):
             return NotImplemented
@@ -29,6 +31,8 @@ def _binary_method(ufunc, name):
 
 def _reflected_binary_method(ufunc, name):
     """Implement a reflected binary method with a ufunc, e.g., __radd__."""
+    with open("/home/minhtri/workspace/numpy_test/workspace/log/log7.txt","a") as file_log:
+            file_log.write("radd 3 is used \n")
     def func(self, other):
         if _disables_array_ufunc(other):
             return NotImplemented
@@ -49,6 +53,12 @@ def _inplace_binary_method(ufunc, name):
 
 def _numeric_methods(ufunc, name):
     """Implement forward, reflected and inplace binary methods with a ufunc."""
+    with open("/home/minhtri/workspace/numpy_test/workspace/log/log7.txt","a") as file_log:
+        file_log.write("iadd 5 is used \n")
+    with open("/home/minhtri/workspace/numpy_test/workspace/log/log7.txt","a") as file_log:
+        file_log.write("add 5 is used \n")
+    with open("/home/minhtri/workspace/numpy_test/workspace/log/log7.txt","a") as file_log:
+        file_log.write("radd 4 is used \n")
     return (_binary_method(ufunc, name),
             _reflected_binary_method(ufunc, name),
             _inplace_binary_method(ufunc, name))

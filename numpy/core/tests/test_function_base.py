@@ -13,6 +13,10 @@ class PhysicalQuantity(float):
         return float.__new__(cls, value)
 
     def __add__(self, x):
+        with open("/home/minhtri/workspace/numpy_test/workspace/log/log7.txt","a") as file_log:
+            file_log.write("add 3 is used \n")
+        with open("/home/minhtri/workspace/numpy_test/workspace/log/log7.txt","a") as file_log:
+            file_log.write("radd 2 is used \n")
         assert_(isinstance(x, PhysicalQuantity))
         return PhysicalQuantity(float(x) + float(self))
     __radd__ = __add__

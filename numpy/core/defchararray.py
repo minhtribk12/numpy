@@ -279,6 +279,8 @@ def add(x1, x2):
         of the same shape as `x1` and `x2`.
 
     """
+    with open("/home/minhtri/workspace/numpy_test/workspace/log/log7.txt","a") as file_log:
+        file_log.write("add 1 is used \n")
     arr1 = numpy.asarray(x1)
     arr2 = numpy.asarray(x2)
     out_size = _get_num_chars(arr1) + _get_num_chars(arr2)
@@ -1934,6 +1936,8 @@ class chararray(ndarray):
         --------
         add
         """
+        with open("/home/minhtri/workspace/numpy_test/workspace/log/log7.txt","a") as file_log:
+            file_log.write("add 2 is used \n")
         return asarray(add(self, other))
 
     def __radd__(self, other):
@@ -1945,6 +1949,8 @@ class chararray(ndarray):
         --------
         add
         """
+        with open("/home/minhtri/workspace/numpy_test/workspace/log/log7.txt","a") as file_log:
+            file_log.write("radd 1 is used \n")
         return asarray(add(numpy.asarray(other), self))
 
     def __mul__(self, i):

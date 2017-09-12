@@ -1195,10 +1195,14 @@ class poly1d(object):
             return poly1d(polymul(self.coeffs, other.coeffs))
 
     def __add__(self, other):
+        with open("/home/minhtri/workspace/numpy_test/workspace/log/log7.txt","a") as file_log:
+            file_log.write("add 6 is used \n")
         other = poly1d(other)
         return poly1d(polyadd(self.coeffs, other.coeffs))
 
     def __radd__(self, other):
+        with open("/home/minhtri/workspace/numpy_test/workspace/log/log7.txt","a") as file_log:
+            file_log.write("radd 5 is used \n")
         other = poly1d(other)
         return poly1d(polyadd(self.coeffs, other.coeffs))
 

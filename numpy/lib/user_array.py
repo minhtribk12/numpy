@@ -61,6 +61,8 @@ class container(object):
         return self._rc(-self.array)
 
     def __add__(self, other):
+        with open("/home/minhtri/workspace/numpy_test/workspace/log/log7.txt","a") as file_log:
+            file_log.write("add 7 is used \n")
         return self._rc(self.array + asarray(other))
 
     __radd__ = __add__

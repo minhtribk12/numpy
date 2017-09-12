@@ -307,6 +307,8 @@ class ABCPolyBase(object):
         return self
 
     def __add__(self, other):
+        with open("/home/minhtri/workspace/numpy_test/workspace/log/log7.txt","a") as file_log:
+            file_log.write("add 10 is used \n")
         othercoef = self._get_coefficients(other)
         try:
             coef = self._add(self.coef, othercoef)
@@ -373,6 +375,8 @@ class ABCPolyBase(object):
         return res
 
     def __radd__(self, other):
+        with open("/home/minhtri/workspace/numpy_test/workspace/log/log7.txt","a") as file_log:
+            file_log.write("radd 8 is used \n")
         try:
             coef = self._add(other, self.coef)
         except Exception:

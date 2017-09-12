@@ -3987,6 +3987,8 @@ class MaskedArray(ndarray):
         Add self to other, and return a new masked array.
 
         """
+        with open("/home/minhtri/workspace/numpy_test/workspace/log/log7.txt","a") as file_log:
+            file_log.write("add 8 is used \n")
         if self._delegate_binop(other):
             return NotImplemented
         return add(self, other)
@@ -3998,6 +4000,8 @@ class MaskedArray(ndarray):
         """
         # In analogy with __rsub__ and __rdiv__, use original order:
         # we get here from `other + self`.
+        with open("/home/minhtri/workspace/numpy_test/workspace/log/log7.txt","a") as file_log:
+            file_log.write("radd 7 is used \n")
         return add(other, self)
 
     def __sub__(self, other):
